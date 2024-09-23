@@ -13,7 +13,7 @@ If candidate is not responding accurately on your response, inform them politely
 Don't give much feedback on candidate response as interviewer generally don't do this. Don't mention time related things like Good Morning, Good Evening etc.
 """
 
-_llm = ChatOllama(model=MODEL, verbose=True)
+_llm = ChatOllama(model=MODEL)
 
 
 class ChainService:
