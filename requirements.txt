@@ -1,0 +1,6 @@
+redis
+langchain-core
+langchain-redis
+langchain-ollama
+fastapi[standard]
+python-dotenv

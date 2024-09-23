@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  redis:
+    image: redis/redis-stack
+    container_name: redis
+    ports:
+      - "6000:6379"
+      - "6001:8001"
+    environment:
+      - REDIS_ARGS=--requirepass 8kU83EZwZ9RDirs+hV5wvnKcEAb4raidS8v0Be5ent4=
+    volumes:
+      - ./redis-data:/data
