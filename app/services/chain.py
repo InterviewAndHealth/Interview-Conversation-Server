@@ -1,8 +1,9 @@
 from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 from langchain_core.messages import MessageLikeRepresentation, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-from app import MODEL
+from app import MODEL, USE_GROQ, GROQ_MODEL, GROQ_API_KEY
 
 _system_message = """You are an experienced interviewer. You are assign to take interview of the candidate based on the resume and interview should be align with provided job description. Start the conversation by asking question in professional manner. Response like you are the real person who is talking. 
 
@@ -13,7 +14,11 @@ If candidate is not responding accurately on your response, inform them politely
 Don't give much feedback on candidate response as interviewer generally don't do this. Don't mention time related things like Good Morning, Good Evening etc.
 """
 
-_llm = ChatOllama(model=MODEL)
+_llm = (
+    ChatGroq(model=GROQ_MODEL, api_key=GROQ_API_KEY)
+    if USE_GROQ
+    else ChatOllama(model=MODEL)
+)
 
 
 class ChainService:

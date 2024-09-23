@@ -2,5 +2,6 @@ redis
 langchain-core
 langchain-redis
 langchain-ollama
+langchain-groq
 fastapi[standard]
 python-dotenv
