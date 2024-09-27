@@ -59,8 +59,10 @@ class ChatService:
                 "configurable": {"session_id": self.interview_id},
             },
         )
-
-        return MessageResponse(message=response.content)
+        # for i in response['messages']:
+        #     print(i.content)
+        #     print("*"*100)
+        return MessageResponse(message=response['messages'][-1].content)
 
     def start(self) -> str:
         """Start the chat service."""

@@ -1,41 +1,35 @@
-job_desc = """What is a Frontend Engineer?
-A Frontend Engineer is a technology professional who specializes in designing and implementing the visual and interactive elements of a website or web application. They focus on the client-side of development, ensuring users can seamlessly interact with the product. Frontend Engineers are skilled in various web technologies and frameworks, enabling them to create dynamic and responsive user interfaces that offer an engaging user experience.
+job_desc = """
+### **Job Title**: Artificial Intelligence (AI) Engineer
 
-What does a Frontend Engineer do?
-A Frontend Engineer plays a critical role in web development by building the user-facing aspects of websites and applications. They use languages like HTML, CSS, and JavaScript, along with frameworks like React, to create interactive and visually appealing web pages.
+### **Role Overview**:
+As an AI Engineer, you will design, develop, and optimize AI systems and machine learning models to solve complex problems. You will leverage the latest advancements in AI technologies, such as LangChain, large language models (LLMs), and vector databases, while collaborating with data scientists and engineers to build scalable, efficient solutions.
 
-Their responsibilities extend from translating design concepts into code to optimizing applications for performance and scalability. They work closely with backend engineers to integrate server-side functionalities and ensure a cohesive user experience.
+### **Key Responsibilities**:
+- **AI Model Development**: Develop machine learning and deep learning models using frameworks such as TensorFlow, PyTorch, and Keras for tasks in NLP, computer vision, and predictive analytics.
+- **LangChain for LLMs**: Build and integrate applications that interact with large language models using LangChain, enabling dynamic workflows for conversational AI, document Q&A, and task automation.
+- **Vector Databases & Semantic Search**: Implement and manage vector databases (e.g., Pinecone, Weaviate) for semantic search, improving the efficiency and scalability of AI solutions handling large datasets.
+- **Data Engineering**: Create robust data pipelines using tools like Apache Spark, Hadoop, and SQL to handle big data, ensuring proper preprocessing and transformation for AI model training.
+- **Model Deployment**: Deploy AI models on cloud platforms like AWS, Google Cloud, and Azure using MLOps practices for continuous integration and delivery, ensuring scalability and performance.
+- **Real-Time Systems**: Develop real-time AI systems that interact with APIs, databases, and live streams of data.
+- **Ethical AI Development**: Ensure that AI solutions are fair, unbiased, and adhere to best practices in responsible AI development.
+- **Continuous Learning & Optimization**: Continuously monitor, retrain, and optimize models based on feedback and new data to improve performance in production.
 
-Frontend Engineers also stay updated with the latest web technologies and trends, applying best practices in coding and design to improve site functionality, efficiency, and user engagement.
+### **Required Skills**:
+- **Machine Learning & Deep Learning**: Proficiency in ML algorithms, deep neural networks (CNNs, RNNs), reinforcement learning, and experience with frameworks like TensorFlow, PyTorch, and Scikit-learn.
+- **LangChain Expertise**: Hands-on experience with LangChain to develop applications leveraging large language models for conversational AI and workflow automation.
+- **Vector Databases**: Proficiency with vector databases such as Pinecone, Milvus, or Weaviate for managing and retrieving embeddings efficiently.
+- **Programming Languages**: Strong coding skills in Python are essential. Proficiency in additional languages like Java, R, or C++ is a plus.
+- **Cloud Computing**: Experience with cloud platforms (AWS, Google Cloud, Azure) for deploying AI systems and managing distributed computing resources.
+- **Big Data & Data Management**: Expertise in big data technologies (e.g., Hadoop, Spark) for data preprocessing, handling, and analysis at scale.
+- **Statistical Analysis & Mathematics**: Solid understanding of linear algebra, calculus, probability, and statistics to design and optimize AI models.
+- **NLP and Computer Vision**: Experience in developing and deploying NLP applications (e.g., chatbots) and computer vision systems (e.g., image classification, object detection).
+- **MLOps & Model Deployment**: Familiarity with MLOps tools for model deployment, continuous integration, and optimization in production environments.
+  
+### **Preferred Qualifications**:
+- Degree in Computer Science, AI, Data Science, or related fields.
+- Experience in managing end-to-end AI projects from concept to production.
+- Familiarity with DevOps and MLOps workflows, including containerization (Docker) and orchestration (Kubernetes).
+- Experience in ethical AI development, with an understanding of fairness, accountability, and transparency.
 
-Responsibilities:
-Developing rich, responsive web applications, including mobile-first applications and PWAs.
-Participating in product design and feature development.
-Coding in modern JavaScript and utilizing the latest React and CSS frameworks.
-Optimizing applications for maximum speed, scalability, and user experience.
 
-Job brief
-We are on the lookout for a passionate Frontend Engineer to join our dynamic team. In this role, you'll be tasked with creating exceptional browser experiences and mobile-first applications.
-
-You'll engage in product design, develop exciting new features using the latest web technologies, and write reusable code.
-
-As a key member of our team, you'll work on optimizing our applications for top performance and contribute to our UI framework.
-
-If you're eager to work with modern web technologies and have a knack for building compelling user interfaces, we'd love to hear from you.
-
-Responsibilities
-Develop rich, responsive web applications, including mobile-first applications and PWAs.
-Participate in product design and feature development.
-Code using the latest JavaScript, React, and CSS frameworks.
-Deliver reusable code and contribute to the UI framework.
-Optimize applications for speed, scalability, and user experience.
-Implement modern CS patterns and web technologies.
-Stay updated with current technologies and apply them appropriately.
-Requirements and skills
-Proficiency in JavaScript frameworks.
-Solid understanding of HTML5, CSS3/4 for styling and designing web pages.
-Passion for creating interactive user experiences.
-Bonus: Comfortable with Git, NodeJS, or Ruby on Rails.
-Bonus: Good understanding of SEO principles and web accessibility.
-Ability to work collaboratively with a team.
 """

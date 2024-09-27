@@ -2,17 +2,30 @@ from langchain_ollama import ChatOllama
 from langchain_groq import ChatGroq
 from langchain_core.messages import MessageLikeRepresentation, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langgraph.prebuilt import create_react_agent
 
-from app import MODEL, USE_GROQ, GROQ_MODEL, GROQ_API_KEY
+from app import MODEL, USE_GROQ, GROQ_MODEL, GROQ_API_KEY, TAVILY_API_KEY
 
-_system_message = """You are an experienced interviewer. You are assign to take interview of the candidate based on the resume and interview should be align with provided job description. Start the conversation by asking question in professional manner. Response like you are the real person who is talking. 
-
-Address the candidate by name confidently. Always ask one question at a time to assess their strengths and fit for the role. Keep responses concise and small. Carefully analyze the response of the candidate. 
-
-If candidate is not responding accurately on your response, inform them politely that please response correctly as your response will going to save and share to seniors (Don't say as I said or mentioned earlier instead say as we inform you. Also don't mention again and again) also say it only when user is not responding accordingly. 
-
-Don't give much feedback on candidate response as interviewer generally don't do this. Don't mention time related things like Good Morning, Good Evening etc.
+_system_message = """You are an experienced interviewer. You are assign to take interview of the candidate based on the Job description. Interview should be align with provided job description. Start the conversation by asking question in professional manner.
+Response like you are the real person who is talking. Address the candidate by name confidently. Always ask one question at a time to assess their strengths and fit for the role. Keep responses concise and small. Carefully analyze the response of the candidate. 
+If candidate is not responding accurately on your response, inform them politely that please response correctly as your response will going to save and share to seniors (Don't say as I said or mentioned earlier instead say as we inform you. Also don't mention again and again),say it only when user is not responding accordingly. 
+Don't give too much feedbacks on candidate response as interviewer generally don't do this in real life. Try to ask questions related to the job description and resume. 
+Don't use greetings which are related to time like good morning, good evening etc.
+If you think the conversation is going off track, you can ask the candidate to focus on the Interview. Also, we have provided you a tool for searching so whenever you think that for the topic (which is in job description, resume or even in the conversation) you need latest information then you can use the tool.
 """
+
+# defining the search tool also 
+_tool = TavilySearchResults(
+    max_results=2,
+    search_depth="advanced",
+    include_answer=True,
+    include_raw_content=True,
+    api_key=TAVILY_API_KEY,
+    
+)
+
+tools = [_tool]
 
 _llm = (
     ChatGroq(model=GROQ_MODEL, api_key=GROQ_API_KEY)
@@ -20,6 +33,7 @@ _llm = (
     else ChatOllama(model=MODEL)
 )
 
+_agent_executor = create_react_agent(_llm, tools)
 
 class ChainService:
     """Service for handling chain operations."""
@@ -66,5 +80,5 @@ class ChainService:
         """Get the chain for the conversation."""
         if self.chain:
             return self.chain
-        self.chain = self.get_prompt() | _llm
+        self.chain = self.get_prompt() | _agent_executor
         return self.chain
